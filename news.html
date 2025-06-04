@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="image/icon.jpg" />
+  <title>News</title>
+  <style>
+  body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.banner {
+  width: calc(100% - 10px);
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+}
+
+.banner-scroll {
+  width: 100%;
+  height: 100%;
+  animation: scroll-left-to-right 5s linear forwards;
+}
+
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item img {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  border: 4px solid #161cdf; /* garis kuning setebal 4px */
+  border-radius: 8px; /* opsional: bikin sudut gambar agak membulat */
+}
+/* Basic navbar styling */
+.navbar {
+  background-color: #161cdf;
+  font-family: Arial, sans-serif;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar > ul > li {
+  /* Top-level menu items */
+  position: relative;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+
+/* Dropdown styling */
+.navbar ul ul {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position right under parent */
+  left: 0;
+  background-color: #fbfbfd; /* Putih */
+  padding: 0;
+  flex-direction: column;
+  min-width: 250px;
+  z-index: 1000;
+}
+
+/* Dropdown text color */
+.navbar ul ul a {
+  color: black;  
+}
+
+/* Optional: Hover style di dropdown */
+.navbar ul ul a:hover {
+  background-color: #ddd; 
+  color: #000;           
+}
+
+
+.navbar ul ul li {
+  display: block;
+  width: 100%;
+}
+
+/* Show dropdown on hover */
+.navbar li:hover > ul {
+  display: block;
+}
+i.since {
+  color: blue;
+}
+
+i.new {
+  color: red;
+}
+.navbar ul ul li a {
+  display: block;        /* agar padding dan alignment bisa berlaku */
+  padding: 10px 15px;
+  white-space: nowrap;
+  text-align: left;
+  text-decoration: none; /* hapus underline */
+  color: #000;           /* warna teks */
+}
+
+.content {
+  padding: 30px;
+}
+@media (max-width: 768px) {
+  .item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    text-align: left;
+    padding: 10px;
+  }
+
+  .banner {
+    height: auto;
+  }
+
+  .banner img {
+    height: auto;
+  }
+
+  .content {
+    padding: 10px;
+  }
+}
+
+.site-footer {
+  background-color: #033b92;   
+  color: #fafbfe;              
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.site-footer .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-footer img {
+  width: 40px;                
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #fafbfe;
+}
+
+  </style>
+</head>
+<body>
+  <section>
+  <div class="container">
+    <div class="banner">
+      <div class="banner-scroll">
+        <img src="image/banner.jpg" alt="COST Banner" />
+      </div>
+    </div>
+  </section>
+ 
+ <!-- Navigation Bar -->
+<div class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="Faculty Members.html">Faculty Members</a></li>
+    <li><a href="Professional Training.html">Professional Training</a></li>
+    <li><a href="videos.html">Videos</a></li>
+
+    <li>
+      <a href="#">COST Bachelor Programs</a>
+      <ul>
+	  <li><a href="Information and Technology.html" target="_blank">Information and Technology <i class="since">since 2003</i></a></li>
+		<li><a href="CS.html" target="_blank">Computer Science <i class="since">since 2003</i></a></li>
+		<li><a href="ET.html" target="_blank">Electronic and Telecommunication <i class="since">since 2003</i></a></li>
+		<li><a href="GDM.html" target="_blank">Graphic Design and Multimedia <i class="new">New 2006</i></a></li>
+		<li><a href="BMIT.html" target="_blank">Business Management Information Technology <i class="new">New 2006</i></a></li>
+		<li><a href="NECS.html" target="_blank">Network Engineering and Cyber Security <i class="new">New 2006</i></a></li>
+		<li><a href="DSAI.html" target="_blank">Data Science and Artificial Intelligence <i class="new">New 2006</i></a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">Computer Labs</a>
+      <ul>
+        <li><a href="Multimedia Labs.html" target="_blank">Multimedia Lab</a></li>
+        <li><a href="E-learning lab.html" target="_blank">E-learning Lab</a></li>
+        <li><a href="Networking Labs.html" target="_blank">Networking Lab</a></li>
+        <li><a href="IT center.html" target="_blank">IT Center Lab</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="content">
+<p><h3>New Programs for Academic Year 2025-2026</h3></p>
+<p class="khmer-text">
+📢អាហារូបករណ៍ពិសេស 60% សម្រាប់សិស្សនិស្សិតទូទៅ និង 70% សម្រាប់មន្រ្តីរាជការ និងគ្រូបង្រៀន ស្ថិតនៅក្រោមក្រសួងអប់រំ យុវជន និងកីឡា ដោយមិនឆ្លងកាត់ប្រឡង សម្រាប់វគ្គសិក្សាថ្មី វគ្គសិក្សាទី៣ កំពុងរង់ចាំអ្នក! ✍️ចាប់ផ្ដើមទទួលពាក្យចាប់ពីថ្ងៃផ្សាយដំណឹងនេះតទៅ វគ្គសិក្សាថ្មីចូលរៀននៅថ្ងៃចន្ទ ទី១៥ ខែ កក្កដា ឆ្នាំ២០២៤។ 👉សូមរួសរាន់ឡើងព្រោះចំនួនមានកំណត់! ព័ត៌មានលម្អិតសូមទាក់ទងលេខទូរស័ព្ទ៖ ☎️០៦៩ ៦៥៩ ៦០៩ / ០៧០ ៣៥១ ៧៣៨ (តេឡេក្រាម)។ សូមអរគុណ!</p>
+</div>
+<div class="gallery">
+      <div class="item">
+        <a target="_blank" href="image/news.jpg">
+          <img src="image/news.jpg" alt="COST"></a>
+</div>
+</body>
+<footer class="site-footer">
+ <div class="item">
+    <a target="_blank" href="image/uc.png"><img src="image/uc.png" alt="UC"></a>
+	<p> Copyright © University of Cambodia </P>
+  </div>
+</html>

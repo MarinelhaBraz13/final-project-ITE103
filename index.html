@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="image/icon.jpg" />
+  <title>College of Science and Technology</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner {
+  width: calc(100% - 10px);
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+}
+
+.banner-scroll {
+  width: 100%;
+  height: 100%;
+  animation: scroll-left-to-right 5s linear forwards;
+}
+
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Basic navbar styling */
+.navbar {
+  background-color: #161cdf;
+  font-family: Arial, sans-serif;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar > ul > li {
+  /* Top-level menu items */
+  position: relative;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar li {
+    width: 100%;
+  }
+
+  .navbar a {
+    text-align: left;
+    padding: 12px 16px;
+  }
+
+  .navbar ul ul {
+    position: static;
+    background-color: #fbfbfd;
+    box-shadow: none;
+  }
+
+  .navbar li:hover > ul {
+    display: block;
+  }
+}
+
+/* Dropdown styling */
+.navbar ul ul {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position right under parent */
+  left: 0;
+  background-color: #fbfbfd; /* Putih */
+  padding: 0;
+  flex-direction: column;
+  min-width: 250px;
+  z-index: 1000;
+}
+
+/* Dropdown text color */
+.navbar ul ul a {
+  color: black;  
+}
+
+/* Optional: Hover style di dropdown */
+.navbar ul ul a:hover {
+  background-color: #ddd; 
+  color: #000;           
+}
+
+
+.navbar ul ul li {
+  display: block;
+  width: 100%;
+}
+
+/* Show dropdown on hover */
+.navbar li:hover > ul {
+  display: block;
+}
+i.since {
+  color: blue;
+}
+
+i.new {
+  color: red;
+}
+
+.navbar ul ul li a {
+  display: block;        /* agar padding dan alignment bisa berlaku */
+  padding: 10px 15px;
+  white-space: nowrap;
+  text-align: left;
+  text-decoration: none; /* hapus underline */
+  color: #000;           /* warna teks */
+}
+
+    .content {
+      padding: 20px;
+    }
+
+    .khmer-text {
+      font-family: "Khmer OS", "Arial", sans-serif;
+      font-size: 16px;
+      padding: 0 2rem;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 10px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .item {
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+
+ .item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid yellow;
+  cursor: pointer;
+  transition: transform 0.3s ease, outline 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.05) translateY(-5px);
+  outline-offset: 6px;
+  box-shadow: 0 0 16px #1E90FF;
+}
+
+    .item p {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    /* Marquee Heading Section */
+    .heading-container {
+      background-color: #033b92;
+      padding: 1rem;
+    }
+
+    .heading-marquee {
+      color: #fafbfe;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .heading-marquee img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    /* CSS marquee animation */
+    .scrolling-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scrollText 15s linear infinite;
+    }
+
+    @keyframes scrollText {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+     /* Footer */
+    .site-footer {
+  background-color: #033b92;
+  color: #fafbfe;
+  padding: 1.5rem 0.5rem; /* Sedikit space kiri-kanan */
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+    .site-footer img {
+      width: 24px;
+      vertical-align: middle;
+      margin-bottom: 0.5rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      .item img {
+        height: 180px;
+      }
+
+      .navbar a {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .heading-marquee {
+        font-size: 1rem;
+      }
+
+      .site-footer {
+        font-size: 0.85rem;
+      }
+    }
+	
+  </style>
+</head>
+<body>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <div class="banner-scroll">
+      <img src="image/banner.jpg" alt="COST Banner" />
+    </div>
+  </div>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="Faculty Members.html">Faculty Members</a></li>
+    <li><a href="Professional Training.html">Professional Training</a></li>
+    <li><a href="videos.html">Videos</a></li>
+
+    <li>
+      <a href="#">COST Bachelor Programs</a>
+      <ul>
+        <li><a href="Information and Technology.html" target="_blank">Information and Technology <i class="since">since 2003</i></a></li>
+		<li><a href="CS.html" target="_blank">Computer Science <i class="since">since 2003</i></a></li>
+		<li><a href="ET.html" target="_blank">Electronic and Telecommunication <i class="since">since 2003</i></a></li>
+		<li><a href="GDM.html" target="_blank">Graphic Design and Multimedia <i class="new">New 2006</i></a></li>
+		<li><a href="BMIT.html" target="_blank">Business Management Information Technology <i class="new">New 2006</i></a></li>
+		<li><a href="NECS.html" target="_blank">Network Engineering and Cyber Security <i class="new">New 2006</i></a></li>
+		<li><a href="DSAI.html" target="_blank">Data Science and Artificial Intelligence <i class="new">New 2006</i></a></li>
+
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">Computer Labs</a>
+      <ul>
+        <li><a href="Multimedia Labs.html" target="_blank">Multimedia Lab</a></li>
+        <li><a href="E-learning lab.html" target="_blank">E-learning Lab</a></li>
+        <li><a href="Networking Labs.html" target="_blank">Networking Lab</a></li>
+        <li><a href="IT center.html" target="_blank">IT Center Lab</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+
+
+  <!-- Introduction Text -->
+  <div class="content">
+    <p class="khmer-text">
+      ស្វាគមន៍មកកាន់មហាវិទ្យាល័យវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យានៃសាកលវិទ្យាល័យកម្ពុជា។ សម្រាប់ប្អូនៗសិស្សានុសិស្ស
+      ដែលមានបំណងចង់បន្តការសិក្សាថ្នាក់បរិញ្ញាបត្ររង និងថ្នាក់បរិញ្ញាបត្រ សូមចុះឈ្មោះជាមួយយើងឥឡូវនេះ
+      ឬអាចអញ្ជើញមកកាន់សាកលវិទ្យាល័យផ្ទាល់ក៏បាន។
+    </p>
+    <p>
+      Welcome to College of Science and Technology of The University of Cambodia. For everyone who wishes to pursue
+      for any AA and BA degrees of the study programs, please register now or visit the campus of The University of
+      Cambodia.
+    </p>
+
+
+    <!-- Gallery Section 1 -->
+    <h2>Studying Activities in CoST</h2>
+    <div class="gallery">
+      <div class="item">
+        <a target="_blank" href="image/a.jpg">
+          <img src="image/a.jpg" alt="Web Development">
+        </a>
+        <p>Web Development-HTML CSS</p>
+      </div>
+      <div class="item">
+        <a target="_blank" href="image/b.JPG">
+          <img src="image/b.JPG" alt="Multimedia Lab">
+        </a>
+        <p>Studying Multimedia Lab</p>
+      </div>
+      <div class="item">
+        <a target="_blank" href="image/c.jpg">
+          <img src="image/c.jpg" alt="IT-Center Lab">
+        </a>
+        <p>Studying IT-Center Lab</p>
+      </div>
+      <div class="item">
+        <a target="_blank" href="image/d.jpg">
+          <img src="image/d.jpg" alt="Graduation 2025">
+        </a>
+        <p>Graduation 2025</p>
+      </div>
+    </div>
+
+    <!-- Marquee Section -->
+    <div class="heading-container">
+      <div class="heading-marquee">
+        <div class="scrolling-text">
+          <img src="image/cost.jpg" alt="COST Logo">
+          Welcome! IT expert to College of Science
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section 2 -->
+    <h2>Computer Labs College CoST</h2>
+    <div class="gallery">
+      <div class="item">
+        <a target="_blank" href="image/e.jpg">
+          <img src="image/e.jpg" alt="Multimedia Lab">
+        </a>
+        <p>Multimedia Lab</p>
+      </div>
+      <div class="item">
+        <a target="_blank" href="image/f.jpg">
+          <img src="image/f.jpg" alt="Networking Lab">
+        </a>
+        <p>Networking Lab</p>
+      </div>
+      <div class="item">
+        <a target="_blank" href="image/g.jpg">
+          <img src="image/g.jpg" alt="IT-Center Lab">
+        </a>
+        <p>IT-Center Lab</p>
+      </div>
+      <div class="item">
+        <a target="_blank" href="image/h.jpg">
+          <img src="image/h.jpg" alt="IT-Center Update">
+        </a>
+        <p>IT-Center Update</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+ <!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <img src="image/uc.png" alt="UC" style="width: 40px; margin-bottom: 10px;">
+    <p>Copyright © University of Cambodia</p>
+  </div>
+</footer>
+</html>
